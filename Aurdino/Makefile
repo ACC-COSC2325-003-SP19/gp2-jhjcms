@@ -6,7 +6,7 @@ PROJNAME := $(notdir $(PROJPATH))
 MK := mk
 
 # configure these settings for your Ardino setup
-AVRPROJ	:= sum
+AVRPROJ	:= ping
 MCU     := atmega328p
 FREQ	:= 16000000L
 PGMR	:= arduino
