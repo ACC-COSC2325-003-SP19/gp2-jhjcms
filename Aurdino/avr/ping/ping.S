@@ -30,13 +30,12 @@ main:
         sts         CLKPR, r1               ; run at full speed
         
         ; set up the LED port
-        sbi         LED_DIR, LED_PIN        ; set LED pin to output
-        cbi         LED_PORT, LED_PIN       ; start with the LED off
+        sbi         PING_DIR, PING_PIN        ; set PING pin to output
+        cbi         PING_PORT, PING_PIN       ; start with the PING off
        
 
         ; enter the blink loop
-1:      call       toggle
-        call       delay
+1:      call       pingTestCode
         rjmp        1b
 
 toggle:
