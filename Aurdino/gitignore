@@ -1,0 +1,11 @@
+#c++
+*.o
+*.a
+demo
+
+#mac
+.DS.Store
+
+#python
+*.py[cod]
+__Pycache__
