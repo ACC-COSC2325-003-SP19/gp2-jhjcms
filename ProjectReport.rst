@@ -8,6 +8,7 @@
 			* Simple pulse in/pulse out communication requires just one I/O pin
 			* Burst indicator LED shows measurement in progress
 			* 3-pin header makes it easy to connect to a development board, directly or with an extension cable, no soldering required
+			
 .. image:: https://www.robotshop.com/media/catalog/product/cache/image/480x480/9df78eab33525d08d6e5fb8d27136e95/p/a/parallax-ping-ultrasonic-sensor-1.jpg
 
 		* The Uno board has seven general pins and six special function pins. It also uses the ATmega328p AVR (8-bit) microcontroller, it weighs 28 grams. it has a flash memory storage of 32 kB and does 20 MIPS (20 Million Instructions per second).
