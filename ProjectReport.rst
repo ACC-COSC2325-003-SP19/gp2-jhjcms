@@ -9,7 +9,9 @@
 			* The indicator LED shows measurement in progress
 			* 3-pin header makes it easy to connect to a development board, directly or with an extension cable.
 
+
 .. image:: F7813020-01.jpg
+
 
 		* The Uno board has seven general pins and six special function pins. It also uses the ATmega328p AVR (8-bit) microcontroller, it weighs 28 grams. it has a flash memory storage of 32 kB and does 20 MIPS (20 Million Instructions per second).
 	:1. LED: There is one LED on the board. It is one when it has a HIGH value and off when it has a LOW value.
