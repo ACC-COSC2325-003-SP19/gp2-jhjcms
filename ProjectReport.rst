@@ -2,8 +2,6 @@
 	* Source - John Hemann
 		* The company that made our device is called Parallax. Their founder was Chip Gracey and he made the company in 1987. They make a wide variety of hardware like microcontrollers, robots, sensors, and boards. They also make a ton of devices that are aimed at teaching people about the basics of programming with devices like the Ping. Because of their goal to educate people, they also have programs to teach people from elementary school to college.
 
-.. image:: F7813020-01.jpg
-
 	* Basic Features - Michael Salas and Garrett Dipalma
 		* Ping
 			* Provides precise distance measurements within a 3 cm to 3 m range
@@ -12,6 +10,7 @@
 			* The indicator LED shows measurement in progress
 			* 3-pin header makes it easy to connect to a development board, directly or with an extension cable.
 
+.. image:: F7813020-01.jpg
 
 		* The Uno board has seven general pins and six special function pins. It also uses the ATmega328p AVR (8-bit) microcontroller, it weighs 28 grams. it has a flash memory storage of 32 kB and does 20 MIPS (20 Million Instructions per second).
 	:1. LED: There is one LED on the board. It is one when it has a HIGH value and off when it has a LOW value.
