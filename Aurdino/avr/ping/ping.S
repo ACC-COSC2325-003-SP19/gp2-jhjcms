@@ -35,8 +35,27 @@ main:
        
 
         ; enter the blink loop
-1:      call       pingTestCode
+1:    	; call       toggle
+	call        delayTwoMs
+	call        toggle
+	call	    delayFiveMs
+	call	    toggle
+	sbi         PING_READ, PING_PIN
+	
+	ldi	    r19, 0
+	rjmp	    2f
+	
+	call	    toggle
         rjmp        1b
+
+	; checking for sound to come back
+2:
+	inc	    r19
+	in          r24, PING_PORT
+	cp	    r24, 1
+	brne	    2b
+	ret
+	
 
 toggle:
         in          r24, PING_PORT           ; get current bits
