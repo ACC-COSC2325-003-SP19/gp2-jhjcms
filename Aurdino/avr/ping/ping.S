@@ -44,7 +44,3 @@ toggle:
         eor         r24, r25                ; flip the bit
         out         PING_PORT, r24           ; write the bits back
         ret
-
-delay:
-        
-        
