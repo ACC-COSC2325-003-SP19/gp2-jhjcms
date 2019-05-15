@@ -39,8 +39,8 @@ main:
         rjmp        1b
 
 toggle:
-        in          r24, LED_PORT           ; get current bits
-        ldi         r25, (1 << LED_PIN)     ; LED is pin 5
+        in          r24, PING_PORT           ; get current bits
+        ldi         r25, (1 << PING_PIN)     ; LED is pin 5
         eor         r24, r25                ; flip the bit
-        out         LED_PORT, r24           ; write the bits back
+        out         PING_PORT, r24           ; write the bits back
         ret
