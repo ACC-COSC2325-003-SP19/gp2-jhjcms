@@ -1,9 +1,10 @@
-* Ping Ultrasonic Distance Sensor
+* Parallax
 	* Source - John Hemann
 		* The company that made our device is called Parallax. Their founder was Chip Gracey and he made the company in 1987. They make a wide variety of hardware like microcontrollers, robots, sensors, and boards. They also make a ton of devices that are aimed at teaching people about the basics of programming with devices like the Ping. Because of their goal to educate people, they also have programs to teach people from elementary school to college.
 
 .. image:: images/F7813020-01.jpg
 
+* Ping Ultrasonic Distance Sensor
 	* Basic Features - Michael Salas and Garrett Dipalma
 		* Ping
 			* Provides precise distance measurements within a 3 cm to 3 m range
