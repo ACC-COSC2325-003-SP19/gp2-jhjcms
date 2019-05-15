@@ -1,7 +1,7 @@
 * Chosen Device Description
 	* The company that made our device is called Parallax. Their founder was Chip Gracey and he made the company in 1987. They make a ton of devices that are aimed at teaching people about the basics of programming with devices like the Ping.
 	* Basic Features - Garrett Dipalma
-	* * The Uno board has seven general pins and six special function pins. It also uses the ATmega328p microcontroller. 
+		* The Uno board has seven general pins and six special function pins. It also uses the ATmega328p microcontroller. 
 	:1. LED: There is one LED on the board. It is one when it has a HIGH value and off when it has a LOW value.
 	:2. VIN (Input Voltage): The input voltage to the Arduino board when it's using an external power source.
 	:3. 5V: This pin outputs a regulated 5V from the regulator on the board. The board can be supplied with power either from the DC power jack (7 - 12V), the USB connector (5V), or the VIN pin of the board (7-12V).
@@ -10,7 +10,7 @@
 	:6 IOREF: This pin on the Arduino Uno R3 board provides the voltage reference with which the microcontroller operates
 	:7. Reset: a resettable polyfuse that protects your computer's USB ports from shorts and overcurrent when more than  500 mA is applied to the USB port
 	
-	* Special pins
+		* Special pins
 	:1. Serial: Pins 0 (RX) and 1 (TX). Used to receive (RX) and transmit (TX) TTL serial data.
 	:2. External Interupts: Pins 2 and 3. These pins can be configured to trigger an interrupt on a low value, a rising or falling edge, or a change in value
 	:3. PWM (Pulse Width Modulation): Pins 3, 5, 6, 9, 10, and 11. Provide 8-bit PWM output with analog functions.
