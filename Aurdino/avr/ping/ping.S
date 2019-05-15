@@ -45,6 +45,9 @@ main:
 	ldi	    r19, 0
 	rjmp	    2f
 	
+	; make code to calc distance
+	call 	    print ; will be c++ function
+	
 	call	    toggle
         rjmp        1b
 
