@@ -39,9 +39,9 @@ main:
 
         ; enter the ping loop
 1:    	
-	rcall       delTwoMs
+	call        delTwoMs
 	rcall       togglePing
-	rcall	    delayFiveMs
+	call	    delayFiveMs
 	rcall	    togglePing
 	sbi         PING_READ, PING_PIN
 	
@@ -53,25 +53,24 @@ main:
 	cpse        r19, 0
 	rcall       toggleLed	
 
-        ; not sure yet v v
-
+        sbi         PING_DIR, PING_PIN        ; set PING pin to output
 	rcall	    togglePing
 	rcall       toggleLed
         rjmp        1b
 
-	; checking for sound to come back
-2:      ; decrements first reg, gets PING_PORT and returns if gets pulse
+	; checks for sound to come back
+2:      ; decrements first register and gets PING_PORT. Returns if gets ping
 	; back or timer reaches 0
 	dec	    r19
 	ldi         r20, 93
 	in          r24, PING_PORT
 	cpse	    r24, 0 ; checks if r24 has ping toggle, if not it skips ret
 	ret
-	cp          r19, 1
-	brsh        3f
+	cp          r19, 1 
+	brsh        3f ; checks if r19 reaches 0, if not repeats loop
 	ret
 
-3:
+3:      ; timer loop part two for distance requirement.
 	dec         r20
 	cp          r20, 0
 	breq        2b
@@ -92,24 +91,3 @@ toggleLed:
         out         LED_PORT, r26           ; write the bits back
         ret
 
-; delays machine for 5 microseconds
-delayFiveMs:
-	ldi         r18, 80
-  	ldi	    r17, 0
-
-loopForFiveOne:	
-	dec         r16
-	cp          r16, r17
-	brne        1b
-        ret
-
-; delays machine for 2 microseconds
-delTwoMs:
-	ldi         r16, 32
- 	ldi         r17, 0
-
-loopForTwoOne:	
-	dec         r16
-	cp          r16, r17
-	brne        1b
-	ret

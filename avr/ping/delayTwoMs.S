@@ -3,7 +3,7 @@
     .section    .text
 delay:
 	ldi	r16, 32
-  ldi r17, 0
+        ldi r17, 0
 1:	
 	dec	r16
 	cp 	r16, r17
