@@ -1,0 +1,77 @@
+
+ping.elf:     file format elf32-avr
+
+
+Disassembly of section .text:
+
+00000000 <__ctors_end>:
+   0:	11 24       	eor	r1, r1
+   2:	1f be       	out	0x3f, r1	; 63
+   4:	cf ef       	ldi	r28, 0xFF	; 255
+   6:	d8 e0       	ldi	r29, 0x08	; 8
+   8:	de bf       	out	0x3e, r29	; 62
+   a:	cd bf       	out	0x3d, r28	; 61
+   c:	80 e8       	ldi	r24, 0x80	; 128
+   e:	80 93 61 00 	sts	0x0061, r24	; 0x800061 <__TEXT_REGION_LENGTH__+0x7e0061>
+  12:	10 92 61 00 	sts	0x0061, r1	; 0x800061 <__TEXT_REGION_LENGTH__+0x7e0061>
+  16:	25 9a       	sbi	0x04, 5	; 4
+  18:	2d 98       	cbi	0x05, 5	; 5
+  1a:	57 9a       	sbi	0x0a, 7	; 10
+  1c:	5f 98       	cbi	0x0b, 7	; 11
+  1e:	27 d0       	rcall	.+78     	; 0x6e <delTwoMs>
+  20:	16 d0       	rcall	.+44     	; 0x4e <togglePing>
+  22:	1f d0       	rcall	.+62     	; 0x62 <delayFiveMs>
+  24:	14 d0       	rcall	.+40     	; 0x4e <togglePing>
+  26:	4f 9a       	sbi	0x09, 7	; 9
+  28:	32 e3       	ldi	r19, 0x32	; 50
+  2a:	04 d0       	rcall	.+8      	; 0x34 <__ctors_end+0x34>
+  2c:	15 d0       	rcall	.+42     	; 0x58 <toggleLed>
+  2e:	0f d0       	rcall	.+30     	; 0x4e <togglePing>
+  30:	13 d0       	rcall	.+38     	; 0x58 <toggleLed>
+  32:	f5 cf       	rjmp	.-22     	; 0x1e <__ctors_end+0x1e>
+  34:	3a 95       	dec	r19
+  36:	4d e5       	ldi	r20, 0x5D	; 93
+  38:	8b b1       	in	r24, 0x0b	; 11
+  3a:	80 11       	cpse	r24, r0
+  3c:	08 95       	ret
+  3e:	31 15       	cp	r19, r1
+  40:	08 f4       	brcc	.+2      	; 0x44 <__ctors_end+0x44>
+  42:	08 95       	ret
+  44:	4a 95       	dec	r20
+  46:	40 15       	cp	r20, r0
+  48:	a9 f3       	breq	.-22     	; 0x34 <__ctors_end+0x34>
+  4a:	0c 94 22 00 	jmp	0x44	; 0x44 <__ctors_end+0x44>
+
+0000004e <togglePing>:
+  4e:	8b b1       	in	r24, 0x0b	; 11
+  50:	90 e8       	ldi	r25, 0x80	; 128
+  52:	89 27       	eor	r24, r25
+  54:	8b b9       	out	0x0b, r24	; 11
+  56:	08 95       	ret
+
+00000058 <toggleLed>:
+  58:	a5 b1       	in	r26, 0x05	; 5
+  5a:	b0 e2       	ldi	r27, 0x20	; 32
+  5c:	ab 27       	eor	r26, r27
+  5e:	a5 b9       	out	0x05, r26	; 5
+  60:	08 95       	ret
+
+00000062 <delayFiveMs>:
+  62:	20 e5       	ldi	r18, 0x50	; 80
+  64:	10 e0       	ldi	r17, 0x00	; 0
+
+00000066 <loopForFiveOne>:
+  66:	0a 95       	dec	r16
+  68:	01 17       	cp	r16, r17
+  6a:	c9 f6       	brne	.-78     	; 0x1e <__ctors_end+0x1e>
+  6c:	08 95       	ret
+
+0000006e <delTwoMs>:
+  6e:	00 e2       	ldi	r16, 0x20	; 32
+  70:	10 e0       	ldi	r17, 0x00	; 0
+
+00000072 <loopForTwoOne>:
+  72:	0a 95       	dec	r16
+  74:	01 17       	cp	r16, r17
+  76:	99 f6       	brne	.-90     	; 0x1e <__ctors_end+0x1e>
+  78:	08 95       	ret
