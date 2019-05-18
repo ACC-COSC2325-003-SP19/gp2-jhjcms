@@ -48,9 +48,10 @@ main:
 	ldi	    r19, 50
 ;	ldi         r20, 93
 	rcall	    2f
-	
-;       have to turn led on once back here - stays in loop until signal
-	
+
+	; checks if pulse got back before timer expired, if expired skip 
+	; turning on led
+	cpse        r19, 0
 	rcall       toggleLed	
 
 	; make code to calc distance
