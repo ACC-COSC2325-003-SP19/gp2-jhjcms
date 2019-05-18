@@ -34,7 +34,8 @@
 * Controlling the device
 	* We used pin 7 which is on PORTD on the Arduino board. This is the only pin required because it swaps between input and output.
 * Device demonstration
-	* How will you show off this device
+        * The device will send out a pulse. It the pulse doesn't return before the timer expires then the object is to far away. The device is calibrated to detect when something is 10cm away and flip an led on indicating to the user that they are within 10cm of an object.
+
 * Project Code
 	
 :: code-block::

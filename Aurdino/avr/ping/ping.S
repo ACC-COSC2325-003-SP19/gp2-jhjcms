@@ -38,15 +38,14 @@ main:
 
 
         ; enter the ping loop
-1:    	; call       toggle
+1:    	
 	rcall       delTwoMs
 	rcall       togglePing
 	rcall	    delayFiveMs
 	rcall	    togglePing
 	sbi         PING_READ, PING_PIN
 	
-	ldi	    r19, 50
-;	ldi         r20, 93
+	ldi	    r19, 20 ; loads timer register
 	rcall	    2f
 
 	; checks if pulse got back before timer expired, if expired skip 
@@ -54,9 +53,7 @@ main:
 	cpse        r19, 0
 	rcall       toggleLed	
 
-	; make code to calc distance
-;	call 	    print ; will be c++ function
-	; 
+        ; not sure yet v v
 
 	rcall	    togglePing
 	rcall       toggleLed
