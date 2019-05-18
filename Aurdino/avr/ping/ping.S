@@ -37,7 +37,7 @@ main:
         cbi         PING_PORT, PING_PIN       ; start with the PING off
 
 
-        ; enter the blink loop
+        ; enter the ping loop
 1:    	; call       toggle
 	rcall       delTwoMs
 	rcall       togglePing
